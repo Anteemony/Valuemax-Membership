@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, redirect, url_for, flash
+from forms import RegistrationForm, LoginForm
 
 #i added a comment
 app = Flask(__name__)
@@ -9,9 +10,20 @@ app.config['SECRET_KEY'] = "0f3c34f7789f6917e12593945aa86bdb"
 def home():
   return render_template("home.html")
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def user_login():
-  return render_template("user_login.html", title="Login")
+  form = LoginForm()
+  print(form.errors)
+  if form.validate_on_submit():
+    if form.phone.data == "08012345678" and form.password.data == "1234":
+      flash('You have been logged in!', 'success')
+      return(redirect(url_for('home')))
+    else:
+      flash('Invalid credentials. Try again.', 'danger')
+
+  print(form.errors)
+    
+  return render_template("user_login.html", title="Login", form=form)
 
 @app.route("/admin")
 def admin_login():
