@@ -8,8 +8,14 @@ class RegistrationForm(FlaskForm):
   phone = StringField(validators=[DataRequired()])
   submit = SubmitField("Add Member")
 
-class LoginForm(FlaskForm):
+class UserLoginForm(FlaskForm):
   phone = StringField(validators=[DataRequired()])
   password = PasswordField("Password", validators=[DataRequired()])
   remember = BooleanField("Remember me")
-  submit = SubmitField("Add Member")
+  submit = SubmitField("Log In")
+
+class AdminLoginForm(FlaskForm):
+  email = StringField(validators=[DataRequired(), Email()])
+  password = PasswordField("Password", validators=[DataRequired()])
+  remember = BooleanField("Remember me")
+  submit = SubmitField("Log In")

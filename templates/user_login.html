@@ -3,7 +3,8 @@
   <h1>Welcome, Enter your Login details below.</h1>
   <form method="POST" action="">
     {{ form.hidden_tag() }}
-    
+
+    <br />
     {{ form.phone.label }}
     {% if form.phone.errors %}
       {{ form.phone }}
@@ -24,8 +25,8 @@
     {% else %}
       {{ form.password }}
     {% endif %}
-    <br />
     
+    <br />
     {{ form.submit }}
   </form> 
 {% endblock content %}
