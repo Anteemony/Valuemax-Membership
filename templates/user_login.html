@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Welcome, Enter your Login details below.</h1>
+  <form action="/action_page.php">
+    <input type="text" id="phone" name="phone" value="" placeholder="e.g 08012345678"><br>
+    <label for="pass">Password</label><br>
+    <input type="text" id="pass" name="pass" value="" placeholder="e.g 0000"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+{% endblock content %}

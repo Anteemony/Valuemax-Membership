@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Welcome Admin. Enter your admin login details.</h1>
+  <form action="/action_page.php">
+    <label for="user">Username</label><br>
+    <input type="text" id="user" name="user" value="" placeholder="e.g admin"><br>
+    <label for="pass">Password</label><br>
+    <input type="text" id="pass" name="pass" value="" placeholder="e.g 0000"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+{% endblock content %}

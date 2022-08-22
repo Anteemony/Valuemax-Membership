@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Enter new member details.</h1>
+  <form action="/action_page.php">
+    <label for="phone">Phone Number</label><br>
+    <input type="text" id="phone" name="phone" value="" placeholder="e.g 08012345678"><br>
+    <label for="mail">Email</label><br>
+    <input type="email" id="mail" name="mail" value="" placeholder="e.g yourmail@youraddress.com"><br>
+    <label for="pass">Password</label><br>
+    <input type="text" id="pass" name="pass" value="" placeholder="e.g 0000"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+{% endblock content %}
