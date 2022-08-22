@@ -1,19 +1,20 @@
-from flask import Flask
+from flask import Flask, render_template
+
 #i added a comment
 app = Flask(__name__)
 
 @app.route("/")
 @app.route("/home")
 def home():
-  return "Welcome to Valuemax Communications. <a href='/login'>Click here</a> to login"
+  return render_template("home.html")
 
 @app.route("/login")
 def login():
-  return "In progress"
+  return render_template("login.html", title="Login")
 
 @app.route("/admin")
 def admin():
-  return "In progress"
+  return render_template("admin.html", title="Admin")
   
 
 if __name__ == "__main__":
