@@ -10,6 +10,16 @@
     {% endif %}
   </head>
   <body>
+
+  <!-- flashed messages  -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <em>{{ message }}</em>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
     <!-- other pages extend here -->
     {% block content %}{% endblock %}
   </body>
